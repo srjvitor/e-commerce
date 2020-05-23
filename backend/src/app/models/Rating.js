@@ -4,10 +4,6 @@ class Rating extends Model {
   static init(sequelize){
     super.init(
       {
-        id: {
-          type: Sequelize.STRING,
-          primaryKey: true
-        },
         user_id: Sequelize.STRING,  
         product_id: Sequelize.STRING,  
         stars: Sequelize.INTEGER,  

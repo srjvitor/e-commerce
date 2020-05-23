@@ -15,7 +15,7 @@ module.exports = {
       },     
       purchaser_id: {
         type: Sequelize.STRING,
-        references: { model: 'purchases', key: 'id' },
+        references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
       },   

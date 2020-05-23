@@ -2,7 +2,8 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('ratings', {
       id: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
       },
@@ -19,7 +20,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
       },  
-      starts: {
+      stars: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
