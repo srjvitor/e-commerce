@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Product_images', {
+    return queryInterface.createTable('product_images', {
       id: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -9,7 +9,7 @@ module.exports = {
 
       product_id: {
         type: Sequelize.STRING,
-        references: { model: 'Products', key: 'id' },
+        references: { model: 'products', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
       },        
@@ -34,6 +34,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Product_images');
+    return queryInterface.dropTable('product_images');
   }
 };

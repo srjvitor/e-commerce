@@ -11,7 +11,7 @@ class User extends Model {
 
         name: Sequelize.STRING,
         email: Sequelize.STRING,   
-        email: Sequelize.STRING,  
+        cpf: Sequelize.STRING,  
         password_hash: Sequelize.STRING,  
 
         city: Sequelize.STRING,  
@@ -21,6 +21,7 @@ class User extends Model {
         address_number: Sequelize.INTEGER,  
         address_complement: Sequelize.STRING,  
         district: Sequelize.STRING,  
+        zip_code: Sequelize.STRING, 
 
         security_lock: Sequelize.INTEGER,  
         status: Sequelize.BOOLEAN

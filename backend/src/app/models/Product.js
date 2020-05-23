@@ -13,7 +13,7 @@ class Product extends Model {
         name: Sequelize.STRING,
         description: Sequelize.STRING,
         category: Sequelize.INTEGER,
-        new: Sequelize.BOOLEAN,
+        new_product: Sequelize.BOOLEAN,
         price: Sequelize.FLOAT
       },
       {

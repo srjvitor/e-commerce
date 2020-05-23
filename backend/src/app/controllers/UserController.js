@@ -5,12 +5,18 @@ class UserController {
   async store(req, res) {
 
     const { 
-      user,
-      password_hash,
+      name,
       email,
-      account_type,
-      status
-    } = req.body;
+      cpf,
+      password_hash,
+      city,  
+      state,
+      address,
+      address_number,
+      address_complement,  
+      district,	
+      zip_code		
+     } = req.body;
 
     const emailExists = await User.findOne({ where: { email} });
 
@@ -18,20 +24,31 @@ class UserController {
       return res.status(400).json({ alerta: "Email já cadastrado em outra conta." });
     }
 
+    const security_lock = 0;
+    const status = true;
+
     const id = crypto.randomBytes(6).toString('HEX');
 
     console.log(id);
 
     const createUser = await User.create({
       id,
-      user,
-      password_hash,
+      name,
       email,
-      account_type,
+      cpf,
+      password_hash,
+      city,  
+      state,
+      address,
+      address_number,
+      address_complement,  
+      district,	
+      zip_code,
+      security_lock,
       status
     });
 
-    return res.json(createUser);
+    return res.status(201).json(createUser);
   }
 
   async index(req, res) {

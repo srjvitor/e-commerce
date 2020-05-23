@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Ratings', {
+    return queryInterface.createTable('ratings', {
       id: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -9,13 +9,13 @@ module.exports = {
 
       user_id: {
         type: Sequelize.STRING,
-        references: { model: 'Users', key: 'id' },
+        references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
       }, 
       product_id: {
         type: Sequelize.STRING,
-        references: { model: 'Products', key: 'id' },
+        references: { model: 'products', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
       },  
@@ -40,6 +40,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('Ratings');
+    return queryInterface.dropTable('ratings');
   }
 };
